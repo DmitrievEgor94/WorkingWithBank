@@ -11,8 +11,6 @@ public class TesterWithConcurrentPackage {
     static void testingOfGettingCredits() {
         Bank bank = new Bank(moneyOfBank);
 
-        BankUser[] bankUsers = new BankUser[numberOfThreads];
-
         ExecutorService executor = Executors.newFixedThreadPool(numberOfThreads);
 
         for (int i = 0; i < numberOfThreads; i++) {
