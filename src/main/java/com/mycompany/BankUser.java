@@ -1,4 +1,4 @@
-package notusingconcurrentpackage;
+package com.mycompany;
 
 public class BankUser implements Runnable {
 
@@ -12,7 +12,6 @@ public class BankUser implements Runnable {
                 synchronized (bank) {
                     if (bank.hasMoney(moneyToTake)) {
                         bank.getMoney(moneyToTake);
-                      //  System.out.println("User "+id+" got money!");
                     }
                 }
         } catch (NotEnoughMoneyException e) {

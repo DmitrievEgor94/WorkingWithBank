@@ -1,12 +1,10 @@
-package notusingconcurrentpackage;
+package com.mycompany;
 
 public class Bank {
 
-    private int maxMoney;
     private int moneyAmount;
 
     public Bank(int money) {
-        maxMoney = money;
         this.moneyAmount = money;
     }
 

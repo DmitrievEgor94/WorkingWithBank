@@ -1,6 +1,6 @@
-package notusingconcurrentpackage;
+package com.mycompany;
 
-public class TesterWithoutConcurrentPackage {
+public class BankUsing {
 
     static final int numberOfThreads = 2;
     static int moneyTakenByUses = 2;
