@@ -1,29 +1,26 @@
-package com.mycompany;
+package com.mycompany.bank_and_users;
 
-public class BankUser implements Runnable {
+public class BankUserJavaSync implements Runnable {
 
-    private int id;
-    private Bank bank;
+    private final Bank bank;
     private int moneyToTake;
+
+    public BankUserJavaSync(Bank bank, int moneyToTake) {
+        this.bank = bank;
+        this.moneyToTake = moneyToTake;
+    }
 
     public void run() {
         try {
-            for (; ; )
+            while (true) {
                 synchronized (bank) {
                     if (bank.hasMoney(moneyToTake)) {
                         bank.getMoney(moneyToTake);
                     }
                 }
+            }
         } catch (NotEnoughMoneyException e) {
             System.out.println(e);
-            System.exit(1);
         }
-
-    }
-
-    public BankUser(int id, Bank bank, int moneyToTake) {
-        this.id = id;
-        this.bank = bank;
-        this.moneyToTake = moneyToTake;
     }
 }
