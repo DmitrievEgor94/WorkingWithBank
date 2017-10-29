@@ -17,7 +17,8 @@ public class BankUsingConcurrentSync {
         ExecutorService executor = Executors.newFixedThreadPool(2);
 
         for (int i = 0; i < NUMBER_OF_USERS; i++) {
-            executor.submit(new BankUserConcurrentSync(bank, MONEY_TAKEN_BY_USES));
+            BankUserConcurrentSync bankUser = new BankUserConcurrentSync(bank, MONEY_TAKEN_BY_USES);
+            executor.submit(bankUser);
         }
     }
 
